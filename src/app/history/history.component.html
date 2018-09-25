@@ -1,0 +1,66 @@
+
+<br>
+<div class="container"> 
+  <div class="row" >
+
+
+<div class="col-md-1" >
+<label for="startdate" >  from </label>
+</div>
+<div class="col-md-3" >
+<input   type="date" id="startdate" name="startdate" [(ngModel)]="startdate"  type="search" >
+ </div> </div>
+  <br>
+<div class="row" >
+    <div class="col-md-1" >
+<label>
+  to
+</label>
+</div>
+<div class="col-md-3" >
+<div>
+<input type="date"  [(ngModel)]="enddate" name="enddate"   type="search" >
+
+</div>
+</div>
+</div>
+<br>
+<div class="row" >
+
+   <div class=" col-md-2 " >
+ <button  (click)="search()" > Search  </button>
+
+  </div>
+</div>
+</div>
+<br>
+<br>
+<table [hidden]="isloading"  class="table" >
+    <tr>
+      <th>#</th>
+      <th> Date time </th>
+      <th>Country</th>
+      <th> Organaization</th>
+      <th> Requested By</th>
+    </tr>
+  <tr *ngFor="let col of resultsearch  ;  let i = index "  > 
+
+  <td >
+    {{i+1}} 
+  </td>    
+  
+  
+      <td >
+        {{col. dateTime}}
+            </td>
+            <td >
+                {{col.veriferCountry}}
+                  </td>
+                  <td >
+                      {{col.orgName}}
+                        </td>
+                        <td >
+                            {{col.veriferName}}
+                              </td>
+ </tr>
+  </table>

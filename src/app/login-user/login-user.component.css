@@ -1,0 +1,21 @@
+
+.red {
+    color:red
+}
+.green{
+    color:green;
+}
+.container {
+
+    margin-top: 75px;
+    width: 400px;
+    height: 275px ;
+    padding:40px 60px ; 
+
+    background-color: bisque }
+
+    body {
+
+
+    background-color: chocolate
+    }

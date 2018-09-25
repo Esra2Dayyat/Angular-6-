@@ -1,0 +1,72 @@
+<div id="maincomtainer" class='container'> 
+        <div class="row" > 
+            <div class="col-md-4"> 
+            <a [href]="downloadpdf" >  download file </a>  
+        
+        </div>
+        </div>
+        <br> 
+  
+        <div class="row" > 
+                <div class="col-md-1"> 
+        <label style="color:white ;" >
+         Code 
+        </label>
+        </div>
+        <div class="col-md-4" >
+        <input  name="code" [(ngModel)]="code.code " type="text" >
+       </div> 
+       <div class="col-md-6" > 
+      <label  class="labeluploadfile" >  
+    Upload Image 
+            
+        <input type="file" name="file" id="file"   class="inputfile"/> 
+       
+     </label>   
+     <!-- <input type="file" name="file" id="file"  class="btn btn-danger"/>  -->
+     <button  class="btnverifyimage" (click)="UploadImage()"  for="file" >Add Image</button>
+                        
+      
+                          
+ </div>
+      
+</div>
+
+      <div class="row">
+
+               <div class="col-md-6">
+                    
+       
+        <button    class="btn btn-danger" (click)="scanverify()" > scan verivy </button>
+        <a [routerLink]="['/history']"    class="btn btn-warning"> go to history  </a>
+        </div>
+      
+        </div>
+ 
+
+ <div id="content" [hidden]="resultsearch" >
+        <div class="panel panel-default">
+                <div class="panel-heading">Search Result </div>
+                <div class="panel-body"> 
+
+  
+  
+<table class="table"  [ngStyle]="{ 'direction': docLang==1 ? 'rtl' :'ltr'}">
+       <tr>
+           <td>    
+                {{docName}}
+                       </td>
+       </tr>
+          <tr *ngFor="let res of  resopnse"> 
+              <th>{{res.key}}</th>
+         <td >
+        
+        {{res.value}} </td>
+        </tr>
+    </table>
+        </div>
+  </div>
+
+
+</div>
+</div>
